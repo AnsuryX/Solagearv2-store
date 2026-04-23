@@ -7,7 +7,7 @@ import dotenv from 'dotenv';
 import { createClient } from '@supabase/supabase-js';
 import { SendMailClient } from 'zeptomail';
 
-dotenv.config();
+dotenv.config({ path: '.env.local' });
 
 // ZeptoMail Client
 const zeptoClient = new SendMailClient({
