@@ -69,7 +69,6 @@ export default function Checkout() {
     try {
       const orderData = {
         user_id: user?.id || null,
-        created_by: user?.email || form.shipping_email,
         items: items.map(i => ({
           product_id: i.product_id,
           product_name: i.product_name,
