@@ -8,6 +8,7 @@ import { getCartItems, getCartTotal, clearCart, subscribeToCart } from '../lib/c
 import { Loader2, Lock, ShieldCheck, AlertCircle, TrendingUp } from 'lucide-react';
 import CheckoutUpsell from '../components/CheckoutUpsell';
 import { motion, AnimatePresence } from 'framer-motion';
+import { supabase } from '../lib/supabase';
 
 export default function Checkout() {
   const navigate = useNavigate();
@@ -84,46 +85,14 @@ export default function Checkout() {
         ...form,
       };
 
-      const response = await fetch('/api/orders', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(orderData),
-      });
+      const { data: newOrder, error } = await supabase
+        .from('orders')
+        .insert(orderData)
+        .select()
+        .single();
 
-      if (!response.ok) {
-        const errorData = await response.json();
-        throw new Error(errorData.message || 'Failed to create order');
-      }
-
-      const newOrder = await response.json();
-
-      try {
-        await fetch('/api/email/send', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ 
-            to: form.shipping_email, 
-            subject: 'Order Confirmation - SolarGear', 
-            templateData: {
-              orderId: newOrder.id,
-              customerName: form.shipping_email,
-              total: grandTotal.toLocaleString(),
-              itemCount: items.length,
-              items: items.map(i => ({
-                product_name: i.product_name,
-                quantity: i.quantity,
-                price: i.price
-              })),
-              shippingDetails: {
-                name: form.shipping_name,
-                address: form.shipping_address,
-                city: form.shipping_city,
-              }
-            }
-          })
-        });
-      } catch (emailError) {
-        console.error('Email sending failed:', emailError);
+      if (error) {
+        throw new Error(error.message || 'Failed to create order');
       }
 
       clearCart();
