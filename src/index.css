@@ -1,0 +1,124 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Outfit:wght@400;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 30 20% 98%;
+    --foreground: 20 14.3% 4.1%;
+    --card: 0 0% 100%;
+    --card-foreground: 20 14.3% 4.1%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 20 14.3% 4.1%;
+    --primary: 38 92% 50%;
+    --primary-foreground: 26 83.3% 14.1%;
+    --secondary: 30 10% 90%;
+    --secondary-foreground: 24 9.8% 10%;
+    --muted: 30 10% 96%;
+    --muted-foreground: 25 5.3% 44.7%;
+    --accent: 38 92% 95%;
+    --accent-foreground: 24 9.8% 10%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 60 9.1% 97.8%;
+    --border: 20 5.9% 90%;
+    --input: 20 5.9% 90%;
+    --ring: 38 92% 50%;
+    --radius: 0.75rem;
+    --font-heading: 'Outfit', sans-serif;
+    --font-body: 'Inter', sans-serif;
+  }
+
+  .dark {
+    --background: 20 14.3% 4.1%;
+    --foreground: 60 9.1% 97.8%;
+    --card: 20 14.3% 4.1%;
+    --card-foreground: 60 9.1% 97.8%;
+    --popover: 20 14.3% 4.1%;
+    --popover-foreground: 60 9.1% 97.8%;
+    --primary: 38 92% 50%;
+    --primary-foreground: 26 83.3% 14.1%;
+    --secondary: 12 6.5% 15.1%;
+    --secondary-foreground: 60 9.1% 97.8%;
+    --muted: 12 6.5% 15.1%;
+    --muted-foreground: 24 5.4% 63.9%;
+    --accent: 12 6.5% 15.1%;
+    --accent-foreground: 60 9.1% 97.8%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 60 9.1% 97.8%;
+    --border: 12 6.5% 15.1%;
+    --input: 12 6.5% 15.1%;
+    --ring: 38 92% 50%;
+    --font-heading: 'Outfit', sans-serif;
+    --font-body: 'Inter', sans-serif;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground font-body antialiased;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-heading tracking-tight;
+  }
+}
+
+/* Custom Utilities for Solar Luxe */
+.solar-gradient {
+  background: linear-gradient(135deg, hsl(var(--primary)) 0%, #fb923c 100%);
+}
+
+.glass-morphism {
+  @apply bg-background/80 backdrop-blur-md border border-white/20;
+}
+
+.text-balance {
+  text-wrap: balance;
+}
+
+.hairline {
+  border-width: 0.5px;
+}
+
+/* Solar Luxe Glow Effects */
+.solar-glow {
+  box-shadow: 0 0 24px -8px hsl(var(--primary) / 0.4);
+}
+
+.solar-glow-text {
+  text-shadow: 0 0 12px hsl(var(--primary) / 0.6);
+}
+
+/* Animated Elements */
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+  100% { transform: translateY(0px); }
+}
+
+/* Leaflet Customization */
+.solar-popup .leaflet-popup-content-wrapper {
+  @apply rounded-3xl p-0 overflow-hidden border-0 shadow-2xl bg-background;
+}
+
+.solar-popup .leaflet-popup-content {
+  @apply m-0 p-0;
+}
+
+.solar-popup .leaflet-popup-tip {
+  @apply bg-background;
+}
+
+/* Badge styles */
+.badge-luxe {
+  @apply px-3 py-1 rounded-full text-[10px] uppercase tracking-[0.2em] font-bold solar-gradient text-white border-0;
+}

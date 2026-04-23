@@ -1,0 +1,21 @@
+User-agent: *
+Allow: /
+Allow: /products/
+Allow: /kits/
+Allow: /blog/
+Disallow: /admin/
+Disallow: /account/
+Disallow: /cart/
+Disallow: /checkout/
+
+# AI Crawlers
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+Sitemap: https://ais-pre-cprpdbksppx7g3nbh7qtpx-266073398271.europe-west2.run.app/sitemap.xml

@@ -1,0 +1,103 @@
+{
+  "name": "Product",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string",
+      "title": "Product Name"
+    },
+    "slug": {
+      "type": "string",
+      "title": "URL Slug"
+    },
+    "description": {
+      "type": "string",
+      "title": "Description"
+    },
+    "short_description": {
+      "type": "string",
+      "title": "Short Description"
+    },
+    "price": {
+      "type": "number",
+      "title": "Price"
+    },
+    "original_price": {
+      "type": "number",
+      "title": "Original Price"
+    },
+    "category": {
+      "type": "string",
+      "title": "Category",
+      "enum": [
+        "Solar Panels",
+        "Inverters",
+        "Batteries",
+        "Mounting",
+        "Accessories",
+        "Kits"
+      ]
+    },
+    "image_url": {
+      "type": "string",
+      "title": "Image URL"
+    },
+    "gallery_urls": {
+      "type": "array",
+      "title": "Gallery Images",
+      "items": {
+        "type": "string"
+      }
+    },
+    "peak_power": {
+      "type": "string",
+      "title": "Peak Power (W)"
+    },
+    "efficiency": {
+      "type": "string",
+      "title": "Efficiency (%)"
+    },
+    "warranty_years": {
+      "type": "number",
+      "title": "Warranty (Years)"
+    },
+    "weight": {
+      "type": "string",
+      "title": "Weight"
+    },
+    "dimensions": {
+      "type": "string",
+      "title": "Dimensions"
+    },
+    "features": {
+      "type": "array",
+      "title": "Features",
+      "items": {
+        "type": "string"
+      }
+    },
+    "in_stock": {
+      "type": "boolean",
+      "title": "In Stock",
+      "default": true
+    },
+    "featured": {
+      "type": "boolean",
+      "title": "Featured",
+      "default": false
+    },
+    "rating": {
+      "type": "number",
+      "title": "Rating"
+    },
+    "review_count": {
+      "type": "number",
+      "title": "Review Count"
+    }
+  },
+  "required": [
+    "name",
+    "price",
+    "category"
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "name": "FAQ",
+  "type": "object",
+  "properties": {
+    "question": {
+      "type": "string",
+      "title": "Question"
+    },
+    "answer": {
+      "type": "string",
+      "title": "Answer"
+    },
+    "category": {
+      "type": "string",
+      "title": "Category",
+      "enum": [
+        "General",
+        "Products",
+        "Installation",
+        "Pricing",
+        "Warranty & Support"
+      ]
+    },
+    "order": {
+      "type": "number",
+      "title": "Display Order"
+    },
+    "published": {
+      "type": "boolean",
+      "title": "Published",
+      "default": true

@@ -1,0 +1,18 @@
+{
+  "schema_version": "v1",
+  "name_for_model": "SolarGearKenya",
+  "name_for_human": "SolarGear Kenya Store",
+  "description_for_model": "Expert solar energy store in Kenya providing solar panels, hybrid inverters, battery kits, and installation services. Offers a blog with solar tips and case studies for Nairobi and other regions.",
+  "description_for_human": "Shop premium solar energy solutions in Kenya.",
+  "auth": {
+    "type": "none"
+  },
+  "api": {
+    "type": "openapi",
+    "url": "https://ais-pre-cprpdbksppx7g3nbh7qtpx-266073398271.europe-west2.run.app/openapi.yaml",
+    "is_user_authenticated": false
+  },
+  "logo_url": "https://ais-pre-cprpdbksppx7g3nbh7qtpx-266073398271.europe-west2.run.app/logo.png",
+  "contact_email": "solargearlrd@gmail.com",
+  "legal_info_url": "https://ais-pre-cprpdbksppx7g3nbh7qtpx-266073398271.europe-west2.run.app/terms"
+}

@@ -1,0 +1,91 @@
+{
+  "name": "Order",
+  "type": "object",
+  "properties": {
+    "items": {
+      "type": "array",
+      "title": "Order Items",
+      "items": {
+        "type": "object",
+        "properties": {
+          "product_id": {
+            "type": "string"
+          },
+          "product_name": {
+            "type": "string"
+          },
+          "price": {
+            "type": "number"
+          },
+          "quantity": {
+            "type": "number"
+          },
+          "image_url": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "subtotal": {
+      "type": "number",
+      "title": "Subtotal"
+    },
+    "shipping": {
+      "type": "number",
+      "title": "Shipping"
+    },
+    "tax": {
+      "type": "number",
+      "title": "Tax"
+    },
+    "total": {
+      "type": "number",
+      "title": "Total"
+    },
+    "status": {
+      "type": "string",
+      "title": "Status",
+      "enum": [
+        "pending",
+        "processing",
+        "shipped",
+        "delivered",
+        "cancelled"
+      ],
+      "default": "pending"
+    },
+    "shipping_name": {
+      "type": "string",
+      "title": "Shipping Name"
+    },
+    "shipping_email": {
+      "type": "string",
+      "title": "Email"
+    },
+    "shipping_phone": {
+      "type": "string",
+      "title": "Phone"
+    },
+    "shipping_address": {
+      "type": "string",
+      "title": "Address"
+    },
+    "shipping_city": {
+      "type": "string",
+      "title": "City"
+    },
+    "shipping_state": {
+      "type": "string",
+      "title": "State"
+    },
+    "shipping_zip": {
+      "type": "string",
+      "title": "ZIP Code"
+    }
+  },
+  "required": [
+    "items",
+    "total",
+    "status"
+  ]
+}
